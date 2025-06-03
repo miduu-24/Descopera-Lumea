@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Css/All.css" />
+    <link rel="stylesheet" href="../Css/Creaza.css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../Jquery/queryCreeaza.js"></script>
+    <title>Descoperă Lumea - Creează cont</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <img src="../Photos/logo.png" alt="Logo Descoperă Lumea" class="logo" />
+        <h1>Descoperă Lumea</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="MainPage.html">Pagina principală</a></li>
+          <li class="sub-menu">
+            Conectare
+            <ul class="dropdown">
+              <li><a href="Autentificare.html">Autentificare</a></li>
+              <li><a href="Creaza.html">Creează un cont</a></li>
+            </ul>
+          </li>
+          <li><a href="Top.html">Top atracții</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Creează cont</h2>
+        <article>
+          <form method="POST" action="../../register.php">
+            <fieldset>
+              <legend><b>Scrie aici:</b></legend>
+
+              <label for="username">Nume utilizator:</label>
+              <div class="username-container">
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  onkeyup="checkUsername()"
+                />
+                <span id="usernameError"></span>
+              </div>
+              <br />
+
+              <label for="nickname">Pseudonim:</label>
+              <div class="nickname-container">
+                <input
+                  type="text"
+                  id="nickname"
+                  name="nickname"
+                  onkeyup="checkNickname()"
+                />
+                <span id="nicknameError"></span>
+              </div>
+              <br />
+
+              <label for="password">Parolă:</label>
+              <div class="password-container">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  onkeyup="checkPassword()"
+                />
+                <span id="passwordError"></span>
+              </div>
+              <br />
+
+              <label for="repeat-password">Repetă parola:</label>
+              <div class="repeat-password-container">
+                <input
+                  type="password"
+                  id="repeat-password"
+                  name="repeat-password"
+                  onkeyup="checkPasswordRepeat()"
+                />
+                <span id="repeatPasswordError"></span>
+              </div>
+              <br /><br />
+
+              <label for="email">Email:</label>
+              <div class="email-container">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  onkeyup="checkEmail()"
+                />
+                <span id="emailError"></span>
+              </div>
+              <br /><br />
+
+              <label for="nume">Nume:</label>
+              <input type="text" id="nume" name="nume" required />
+              <br /><br />
+
+              <label for="prenume">Prenume:</label>
+              <input type="text" id="prenume" name="prenume" required />
+              <br /><br />
+
+              <label for="telefon">Telefon:</label>
+              <div class="phone-container">
+                <input
+                  type="tel"
+                  id="telefon"
+                  name="telefon"
+                  placeholder="(+40) 123 456 789"
+                  onkeyup="checkPhone()"
+                />
+                <span id="phoneError"></span>
+              </div>
+              <br /><br />
+
+              <label for="birthdate">Data nașterii:</label>
+              <div class="birthdate-container">
+                <input
+                  type="date"
+                  id="birthdate"
+                  name="birthdate"
+                  oninput="valideazaData()"
+                />
+                <span id="birthdateError"></span>
+              </div>
+
+              <br /><br />
+
+              <label for="role">În calitate de ce faci acest cont?</label>
+              <select id="role" name="role" multiple>
+                <option value="Turist" selected>Turist</option>
+                <option value="Ghid">Ghid</option>
+              </select>
+              <br /><br />
+
+              <label for="subject">Alte detalii despre tine:</label>
+              <textarea
+                id="subject"
+                name="subject"
+                placeholder="Scrie aici..."
+                rows="4"
+                cols="50"
+              ></textarea>
+              <br /><br />
+
+              <label for="age">Vârsta:</label>
+              <input
+                type="number"
+                id="age"
+                name="age"
+                required
+                max="70"
+                step="1"
+              />
+              <br /><br />
+
+              <label for="country">Țara:</label>
+
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Scrie o țară..."
+              />
+              <div id="dropdownTari"></div>
+
+              <!-- <input
+                type="text"
+                id="country"
+                name="country"
+                placeholder="România"
+                required
+                readonly
+              /> -->
+              <br /><br />
+
+              <label for="judet">Alege un județ:</label>
+              <select id="judet" onchange="updateOrase()">
+                <option value="">Selectează un județ</option>
+              </select>
+
+              <label for="oras">Alege un oraș:</label>
+              <select id="oras">
+                <option value="">Selectează un oraș</option>
+              </select>
+              <div class="checkbox">
+                <label for="over18" class="checkbox-label"
+                  >Am peste 18 ani</label
+                >
+                <input type="checkbox" id="over18" disabled />
+                <br /><br />
+              </div>
+
+              <div class="checkbox">
+                <label for="terms" class="checkbox-label"
+                  >Am citit termenii și condițiile</label
+                >
+                <input type="checkbox" id="terms" required />
+                <br /><br />
+              </div>
+
+              <div class="checkbox">
+                <label for="notifications" class="checkbox-label"
+                  >Doresc să primesc notificări</label
+                >
+                <input type="checkbox" id="notifications" checked />
+                <br /><br />
+              </div>
+
+              <input type="submit" value="Creează cont" class="button" />
+            </fieldset>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Descoperă Lumea. Toate drepturile rezervate.</p>
+    </footer>
+    <script src="../Js/Creaza.js"></script>
+  </body>
+</html>

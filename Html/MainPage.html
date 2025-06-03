@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Css/All.css" />
+    <link rel="stylesheet" href="../Css/MainPage.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../Jquery/queryMainPage.js"></script>
+    <title>Descoperă Lumea</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <img src="../Photos/logo.png" alt="Logo Descoperă Lumea" class="logo" />
+        <h1>Descoperă Lumea</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="MainPage.html">Pagina principală</a></li>
+          <li class="sub-menu">
+            Conectare
+            <ul class="dropdown">
+              <li><a href="Autentificare.html">Autentificare</a></li>
+              <li><a href="Creaza.html">Creează un cont</a></li>
+            </ul>
+          </li>
+          <li><a href="Top.html">Top atracții</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Bun venit!</h2>
+      </section>
+
+      <section class="pause">
+        <h3 class="pause">Așa poate arăta și lumea ta</h3>
+        <div class="image-slider">
+          <div class="slider-container">
+            <div class="arrow up">&#9650;</div>
+            <div class="arrow down">&#9660;</div>
+            <div class="slider-inner" id="sliderInner">
+              <div class="slide"><img src="../Photos/1.jpg" alt="1" /></div>
+              <div class="slide"><img src="../Photos/2.jpg" alt="2" /></div>
+              <div class="slide">
+                <video src="../Photos/video1.mp4" autoplay muted loop></video>
+              </div>
+              <div class="slide"><img src="../Photos/3.jpg" alt="3" /></div>
+            </div>
+          </div>
+
+          <div class="controls">
+            <button id="playPauseBtn">Play</button>
+
+            <label class="checkbox-label">
+              <input type="checkbox" id="repeatCheckbox" /> Repetă
+            </label>
+
+            <label>
+              Interval:
+              <select id="intervalSelect">
+                <option value="2000">2 sec</option>
+                <option value="3000" selected>3 sec</option>
+                <option value="5000">5 sec</option>
+              </select>
+            </label>
+          </div>
+          <div class="controls">
+            <label class="checkbox-label"
+              >Nr. imagini vizibile:
+              <input
+                type="number"
+                id="visibleCount"
+                min="1"
+                max="4"
+                value="1"
+              />
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Observă mai de apropae</h3>
+        <div class="popup-trigger" data-type="image" data-src="../Photos/1.jpg">
+          <img src="../Photos/1.jpg" alt="Image test" />
+        </div>
+
+        <div class="popup-trigger" data-type="image" data-src="../Photos/2.jpg">
+          <img src="../Photos/2.jpg" alt="Image test" />`
+        </div>
+        <div class="popup-trigger" data-type="image" data-src="../Photos/3.jpg">
+          <img src="../Photos/3.jpg" alt="Image test" />
+        </div>
+
+        <div
+          class="popup-trigger"
+          data-type="video"
+          data-src="../Photos/video1.mp4"
+        >
+          <video controls class="video-popup">
+            <source src="../Photos/video1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <button
+          class="popup-trigger"
+          data-type="text"
+          data-content="Boo!"
+          id="text-popup"
+        >
+          Deschide text
+        </button>
+
+        <div class="popup-overlay">
+          <div class="popup-content">
+            <span class="close-btn">×</span>
+            <div class="popup-body"></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Descoperă lumea</h3>
+        <p>
+          Descoperă lumea alături de noi și vei avea parte de cele mai frumoase
+          locuri din întreaga lume. Vei avea parte de cele mai frumoase
+          experiențe și vei descoperi locuri noi și interesante.
+        </p>
+      </section>
+
+      <aside>
+        <h4>Tu ce mai aștepți?</h4>
+        <p>
+          Începe să explorezi lumea chiar acum! Descoperă lumea alături de noi!
+        </p>
+      </aside>
+
+      <section>
+        <h3>Fapte interesante despre atracții</h3>
+        <ul id="myList">
+          <li class="item active">
+            <div>
+              Turnul Eiffel: În timpul verii, din cauza dilatării metalului,
+              turnul se poate înălța cu până la 15 cm!
+            </div>
+            <a href="https://ro.wikipedia.org/wiki/Turnul_Eiffel">Read more</a>
+          </li>
+          <li class="item">
+            <div>
+              India Gate: Sub poarta India Gate arde permanent o flacără numită
+              „Amar Jawan Jyoti” (Flacăra Soldatului Nemuritor), aprinsă în
+              memoria soldaților indieni căzuți în război.
+            </div>
+            <a href="https://en.wikipedia.org/wiki/India_Gate">Read more</a>
+          </li>
+          <li class="item">
+            <div>
+              Monumentul Washington: La momentul finalizării în 1884, era cea
+              mai înaltă construcție din lume, până când a fost depășit de
+              Turnul Eiffel în 1889.
+            </div>
+            <a href="https://ro.wikipedia.org/wiki/Monumentul_lui_Washington"
+              >Read more</a
+            >
+          </li>
+        </ul>
+        <div class="button-container">
+          <button class="button-list" onclick="prevItem()">Previous</button>
+          <button class="button-list" onclick="nextItem()">Next</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Descoperă Lumea. Toate drepturile rezervate.</p>
+    </footer>
+    <script src="../Js/MainPage.js"></script>
+  </body>
+</html>

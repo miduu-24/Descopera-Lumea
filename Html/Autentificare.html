@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Css/All.css" />
+    <link rel="stylesheet" href="/Css/Autentificare.css" />
+    <title>Descoperă Lumea</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <img src="../Photos/logo.png" alt="Logo Descoperă Lumea" class="logo" />
+        <h1>Descoperă Lumea</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="MainPage.html">Pagina principală</a></li>
+          <li class="sub-menu">
+            Conectare
+            <ul class="dropdown">
+              <li><a href="Autentificare.html">Autentificare</a></li>
+              <li><a href="Creaza.html">Creează un cont</a></li>
+            </ul>
+          </li>
+          <li><a href="Top.html">Top atracții</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Autentificare</h2>
+        <article>
+          <form method="POST" action="../../login.php">
+            <fieldset>
+              <legend><b>Scrie aici:</b></legend>
+
+              <label for="username">Nume utilizator:</label>
+              <input
+                list="usernames"
+                type="text"
+                id="username"
+                name="username"
+                required
+              />
+              <datalist id="usernames">
+                <option value="Andrei123"></option>
+                <option value="MariaTraveler"></option>
+                <option value="Explorer99"></option>
+              </datalist>
+
+              <br /><br />
+
+              <label for="password">Parolă:</label>
+              <input type="password" id="password" name="password" required />
+              <br /><br />
+
+              <input type="submit" value="Autentificare" class="button" />
+            </fieldset>
+          </form>
+        </article>
+      </section>
+
+      <aside>
+        <details>
+          <summary>Ajutor autentificare</summary>
+          <p>
+            Introduceți numele de utilizator și parola pentru a accesa contul.
+            Dacă nu aveți un cont, creați unul din meniul principal.
+          </p>
+        </details>
+      </aside>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Descoperă Lumea. Toate drepturile rezervate.</p>
+    </footer>
+  </body>
+</html>

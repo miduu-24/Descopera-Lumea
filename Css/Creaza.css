@@ -1,0 +1,203 @@
+h2 {
+  text-align: center;
+  font-size: 2rem; /* Echivalent cu 32px dacă fontul implicit e 16px */
+  font-weight: bold;
+}
+
+fieldset {
+  margin: 0 auto;
+  width: 50%;
+  border: 0.1rem solid #ccc;
+  padding: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  margin: 0.5rem 0;
+  display: inline-block;
+  border: 0.1rem solid #ccc;
+  box-sizing: border-box;
+}
+
+label {
+  font-size: 1.25rem; /* Aproximativ 20px */
+  font-weight: bold;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  margin: 0.5rem 0;
+  display: inline-block;
+  border: 0.1rem solid #ccc;
+  box-sizing: border-box;
+}
+
+select {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  display: inline-block;
+  border: 0.1rem solid #ccc;
+  box-sizing: border-box;
+  height: 3rem;
+}
+
+.checkbox {
+  float: left;
+  width: 100%;
+  display: flex;
+}
+
+.checkbox-label {
+  margin: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.button {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.875rem 1.25rem;
+  margin: 0.5rem 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+i {
+  background-color: #4caf50;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0% 0.5rem;
+  z-index: 1;
+  position: relative;
+}
+
+.username-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nickname-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.repeat-password-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.email-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.birthdate-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error {
+  background-color: rgb(187, 43, 43);
+}
+
+#dropdownTari {
+  border: 1px solid #ccc;
+  overflow-y: auto;
+  display: none;
+  position: absolute;
+  background: #fff;
+  width: 49%;
+  max-height: 200px;
+  margin-top: 2px;
+  z-index: 10;
+  color: #000;
+}
+
+#dropdownTari div {
+  padding: 8px;
+  cursor: pointer;
+}
+
+#dropdownTari div:hover {
+  background-color: #f0f0f0;
+}
+
+/* Media Queries */
+
+/* Tablete (max-width: 768px) */
+@media (max-width: 768px) {
+  fieldset {
+    width: 75%;
+  }
+
+  label {
+    font-size: 1.1rem;
+  }
+
+  .button {
+    padding: 1rem;
+  }
+
+  i {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+
+/* Telefoane (max-width: 480px) */
+@media (max-width: 480px) {
+  fieldset {
+    width: 90%;
+    padding: 0.75rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  label {
+    font-size: 1rem;
+  }
+
+  input,
+  textarea,
+  select {
+    padding: 0.5rem 1rem;
+  }
+
+  .button {
+    padding: 0.75rem;
+  }
+
+  i {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+}

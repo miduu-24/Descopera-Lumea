@@ -1,0 +1,81 @@
+h2 {
+  text-align: center;
+  font-size: 2rem; /* Echivalent cu 32px dacă fontul implicit e 16px */
+  font-weight: bold;
+}
+
+fieldset {
+  margin: 0 auto;
+  width: 50%;
+  border: 0.1rem solid #ccc;
+  padding: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  margin: 0.5rem 0;
+  display: inline-block;
+  border: 0.1rem solid #ccc;
+  box-sizing: border-box;
+}
+
+label {
+  font-size: 1.25rem; /* Aproximativ 20px */
+  font-weight: bold;
+}
+
+.button {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.875rem 1.25rem;
+  margin: 0.5rem 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+/* Media Queries */
+
+/* Tablete (max-width: 768px) */
+@media (max-width: 768px) {
+  fieldset {
+    width: 75%;
+  }
+
+  label {
+    font-size: 1.1rem;
+  }
+
+  .button {
+    padding: 1rem;
+  }
+}
+
+/* Telefoane (max-width: 480px) */
+@media (max-width: 480px) {
+  fieldset {
+    width: 90%;
+    padding: 0.75rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  label {
+    font-size: 1rem;
+  }
+
+  input {
+    padding: 0.5rem 1rem;
+  }
+
+  .button {
+    padding: 0.75rem;
+  }
+}
